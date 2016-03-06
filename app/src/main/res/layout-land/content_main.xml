@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_bottom_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_top_margin_landscape">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textViewTimeLabel"
+            style="@style/textview_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/display_value"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hapticFeedbackEnabled="false">
+
+        <!-- Esimene rida-->
+        <Button
+            android:id="@+id/nr7"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="14dp"
+            android:text="@string/nr7"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr8"
+
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr7"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr7"
+
+            android:text="@string/nr8"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr9"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr8"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr8"
+
+            android:text="@string/nr9"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/divide"
+            style="@style/operand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr9"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr9"
+            android:text="@string/divide"
+            android:textSize="20sp"
+            app:layout_heightPercent="9%"
+            app:layout_widthPercent="20%" />
+
+        <Button
+            android:id="@+id/subtract"
+            style="@style/operand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@id/divide"
+            android:layout_below="@id/divide"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/minus"
+            android:textAlignment="gravity"
+            app:layout_heightPercent="9%"
+            app:layout_widthPercent="20%" />
+
+        <!--Teine rida-->
+        <Button
+            android:id="@+id/nr4"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/nr7"
+            android:layout_marginTop="14dp"
+            android:text="@string/nr4"
+
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr5"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr4"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr4"
+
+            android:text="@string/nr5"
+
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr6"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_alignTop="@id/nr5"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr5"
+            android:text="@string/nr6"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/multiply"
+            style="@style/operand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr6"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr6"
+            android:gravity="center"
+            android:text="@string/multiply"
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            app:layout_heightPercent="9%"
+            app:layout_widthPercent="20%" />
+
+        <Button
+            android:id="@+id/plus"
+            style="@style/operand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/multiply"
+            android:layout_below="@id/multiply"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/multiply"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+
+            android:text="@string/plus"
+            android:textAlignment="gravity"
+            android:textSize="20sp"
+            app:layout_heightPercent="9%"
+            app:layout_widthPercent="20%" />
+
+        <!-- Kolmas rida-->
+        <Button
+            android:id="@+id/nr1"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/nr4"
+            android:layout_marginTop="14dp"
+            android:text="@string/nr1"
+
+            app:layout_heightPercent="20%"
+
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr2"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr1"
+
+            android:layout_marginStart="14dp"
+
+            android:layout_toEndOf="@id/nr1"
+            android:text="@string/nr2"
+            app:layout_heightPercent="20%"
+
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr3"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr2"
+            android:layout_marginStart="14dp"
+
+
+            android:layout_toEndOf="@id/nr2"
+            android:text="@string/nr3"
+
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <!--Neljas rida-->
+        <Button
+            android:id="@+id/C"
+            style="@style/clear_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/nr1"
+            android:layout_marginTop="14dp"
+            android:text="@string/clear"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/nr0"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/C"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/C"
+            android:text="@string/nr0"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/point"
+            style="@style/input_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/nr0"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/nr0"
+            android:text="@string/point"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="24%" />
+
+        <Button
+            android:id="@+id/ans"
+            style="@style/ans_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/nr0"
+            android:layout_alignEnd="@id/plus"
+            android:layout_alignTop="@id/nr2"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/point"
+            android:text="@string/ans"
+            app:layout_heightPercent="20%" />
+
+
+        <!--
+                <Button
+                    android:id="@+id/button00"
+                    style="@style/ans_button_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="01"
+                    app:layout_heightPercent="35%"
+                    app:layout_widthPercent="35%" />
+
+                <Button
+                    android:id="@+id/button01"
+                    style="@style/ans_button_selector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignTop="@id/button00"
+                    android:layout_toRightOf="@id/button00"
+                    android:text="02"
+                    app:layout_heightPercent="35%"
+                    app:layout_widthPercent="35%" />
+        -->
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+</LinearLayout>

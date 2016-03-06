@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="nr1">1</string>
+    <string name="nr0">0</string>
+    <string name="nr2">2</string>
+    <string name="nr3">3</string>
+    <string name="nr4">4</string>
+    <string name="nr5">5</string>
+    <string name="nr6">6</string>
+    <string name="nr7">7</string>
+    <string name="nr8">8</string>
+    <string name="nr9">9</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">x</string>
+    <string name="divide">÷</string>
+    <string name="ans">=</string>
+    <string name="clear">C</string>
+    <string name="point">.</string>
+    <string name="display_value">1+1+2+3 1+2+3 231234</string>
+</resources>
