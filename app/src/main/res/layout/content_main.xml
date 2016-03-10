@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlack"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_bottom_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@color/colorBlack"
     android:paddingTop="@dimen/activity_top_margin">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/textViewCalc"
             style="@style/textview_label"
-            android:id="@+id/textViewTimeLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/display_value"
+            android:layout_marginEnd="@dimen/btn_bottom_margin"
             android:textSize="30sp" />
 
 
@@ -28,9 +29,10 @@
 
     <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         android:hapticFeedbackEnabled="false">
 
         <!-- Esimene rida-->
@@ -39,10 +41,11 @@
             style="@style/input_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:text="@string/nr7"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr8"
@@ -55,8 +58,9 @@
             android:layout_toEndOf="@id/nr7"
 
             android:text="@string/nr8"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr9"
@@ -69,8 +73,10 @@
             android:layout_toEndOf="@id/nr8"
 
             android:text="@string/nr9"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked"
+            android:nestedScrollingEnabled="false" />
 
         <Button
             android:id="@+id/divide"
@@ -83,7 +89,8 @@
             android:text="@string/divide"
             android:textSize="20sp"
             app:layout_heightPercent="9%"
-            app:layout_widthPercent="20%"/>
+            app:layout_widthPercent="20%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/subtract"
@@ -97,7 +104,8 @@
             android:text="@string/minus"
             android:textAlignment="gravity"
             app:layout_heightPercent="9%"
-            app:layout_widthPercent="20%"/>
+            app:layout_widthPercent="20%"
+            android:onClick="buttonClicked" />
         <!--android:layout_marginStart="14dp"-->
 
         <!--Teine rida-->
@@ -107,11 +115,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@id/nr7"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:text="@string/nr4"
 
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr5"
@@ -123,8 +132,9 @@
             android:layout_toEndOf="@id/nr4"
 
             android:text="@string/nr5"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr6"
@@ -136,8 +146,9 @@
             android:layout_marginStart="14dp"
             android:layout_toEndOf="@id/nr5"
             android:text="@string/nr6"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/multiply"
@@ -152,7 +163,8 @@
             android:textAlignment="gravity"
             android:textSize="20sp"
             app:layout_heightPercent="9%"
-            app:layout_widthPercent="20%" />
+            app:layout_widthPercent="20%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/plus"
@@ -170,7 +182,8 @@
             android:textAlignment="gravity"
             android:textSize="20sp"
             app:layout_heightPercent="9%"
-            app:layout_widthPercent="20%" />
+            app:layout_widthPercent="20%"
+            android:onClick="buttonClicked" />
 
         <!-- Kolmas rida-->
         <Button
@@ -179,12 +192,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@id/nr4"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:text="@string/nr1"
 
-            app:layout_heightPercent="20%"
+            app:layout_heightPercent="21%"
 
-            app:layout_widthPercent="24%" />
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr2"
@@ -197,9 +211,10 @@
 
             android:layout_toEndOf="@id/nr1"
             android:text="@string/nr2"
-            app:layout_heightPercent="20%"
+            app:layout_heightPercent="21%"
 
-            app:layout_widthPercent="24%" />
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr3"
@@ -213,20 +228,22 @@
             android:layout_toEndOf="@id/nr2"
             android:text="@string/nr3"
 
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <!--Neljas rida-->
         <Button
-            style="@style/clear_button"
             android:id="@+id/C"
+            style="@style/clear_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@id/nr1"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="12dp"
             android:text="@string/clear"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/nr0"
@@ -237,8 +254,9 @@
             android:layout_marginStart="14dp"
             android:layout_toEndOf="@id/C"
             android:text="@string/nr0"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
             android:id="@+id/point"
@@ -249,21 +267,23 @@
             android:layout_marginStart="14dp"
             android:layout_toEndOf="@id/nr0"
             android:text="@string/point"
-            app:layout_heightPercent="20%"
-            app:layout_widthPercent="24%" />
+            app:layout_heightPercent="21%"
+            app:layout_widthPercent="24%"
+            android:onClick="buttonClicked" />
 
         <Button
-            style="@style/ans_button"
             android:id="@+id/ans"
+            style="@style/ans_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@id/point"
             android:layout_alignBottom="@id/nr0"
-            android:layout_alignTop="@id/nr2"
             android:layout_alignEnd="@id/plus"
+            android:layout_alignTop="@id/nr2"
             android:layout_marginStart="14dp"
+            android:layout_toEndOf="@id/point"
             android:text="@string/ans"
-            app:layout_heightPercent="20%" />
+            app:layout_heightPercent="21%"
+            android:onClick="buttonClicked" />
 
 
         <!--
