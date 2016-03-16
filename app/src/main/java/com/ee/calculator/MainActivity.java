@@ -3,7 +3,6 @@ package com.ee.calculator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
         calcText = (TextView) findViewById(R.id.textViewCalc);
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             if (BuildConfig.DEBUG) {
                 Log.d(TAG, "Restoring state");
             }
-            calc.setInputArray(savedInstanceState.getStringArrayList(STATE_ARRAY));
+            calc.setStringToArray(savedInstanceState.getString(STATE_ARRAY));
             calc.setCalcResult(savedInstanceState.getDouble(STATE_RESULT));
             calc.setCurrentNumber(savedInstanceState.getString(STATE_CURRENT));
             calc.setDisplayText(savedInstanceState.getString(STATE_DISPLAY));
@@ -43,16 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
         currentInput();
     }
+
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState){
+    public void onSaveInstanceState(Bundle savedInstanceState) {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "onSaveInstanceState called");
         }
-        savedInstanceState.putStringArrayList(STATE_ARRAY,calc.getInputArray());
-        //TODO array sisu
+        calc.arrayToString(calc.getInputArray());
+        savedInstanceState.putString(STATE_ARRAY, calc.getStateDisplayTextSave());
         savedInstanceState.putString(STATE_DISPLAY, calc.getDisplayText());
-        savedInstanceState.putDouble(STATE_RESULT, calc.getCalcResult());
         savedInstanceState.putString(STATE_CURRENT, calc.getCurrentNumber());
+        savedInstanceState.putDouble(STATE_RESULT, calc.getCalcResult());
         savedInstanceState.putBoolean(STATE_LAST_INSERTS, calc.isLastInserted());
         savedInstanceState.putBoolean(STATE_SHOWING, calc.isShowingResult());
 
@@ -61,12 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void currentInput() {
-        //float sp= 0F;
-        int len = calc.getDisplayText().length() + calc.getCurrentNumber().length();
-        if (len >= 22 && len < 27)
-            calcText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
-        if (len >= 27)
-            calcText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
         calcText.setText(String.format("%s%s", calc.getDisplayText(), calc.getCurrentNumber()));
 
     }

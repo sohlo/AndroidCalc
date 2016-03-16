@@ -15,17 +15,16 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="textview_label" parent="@android:style/Widget.TextView">
-        <item name="android:textSize">35sp</item>
+        <item name="android:textSize">85sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#d1d1d1</item>
-        <item name="android:fontFamily">serif</item>
         <item name="android:antialias">true</item>
         <item name="android:gravity">top|right</item>
     </style>
 
     <style name="operand_button">
         <item name="android:background">@drawable/operand_button_selector</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">34sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center_horizontal|center_vertical</item>
@@ -35,30 +34,28 @@
 
     <style name="input_button">
         <item name="android:background">@drawable/input_button_selector</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">50sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center_horizontal|center_vertical</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:fontFamily">serif</item>
     </style>
 
     <style name="clear_button">
         <item name="android:background">@drawable/clear_button_selector</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">45sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center_horizontal|center_vertical</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:fontFamily">serif</item>
 
     </style>
 
     <style name="ans_button">
         <item name="android:background">@drawable/ans_button_selector</item>
-        <item name="android:textSize">35sp</item>
+        <item name="android:textSize">45sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center_horizontal|center_vertical</item>

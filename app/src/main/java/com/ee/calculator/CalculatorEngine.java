@@ -11,21 +11,26 @@ import java.util.Objects;
 public class CalculatorEngine {
 
     private static final String TAG = "CalculatorEngine";
-    private double calcResult = -1;
+    private double calcResult;
 
 
     private String currentNumber = "";
     private boolean lastInserted;
     private boolean showingResult = false;
     private String displayText = "";
+    private String stateDisplayTextSave = "";
     private ArrayList<String> inputArray = new ArrayList<>();
+
+    public String getStateDisplayTextSave() {
+        return stateDisplayTextSave;
+    }
+
+    public void setStateDisplayTextSave(String stateDisplayTextSave) {
+        this.stateDisplayTextSave = stateDisplayTextSave;
+    }
 
     public void setCalcResult(double calcResult) {
         this.calcResult = calcResult;
-    }
-
-    public void setInputArray(ArrayList<String> inputArray) {
-        this.inputArray = inputArray;
     }
 
     public String getDisplayText() {
@@ -76,7 +81,6 @@ public class CalculatorEngine {
             showingResult = false;
             clear();
         }
-        //TODO ÜMBER SWITCH CASEKS?
         if (btnID.contains("nr")) {
             if (btnID.contains("0")) {
                 if (!Objects.equals(currentNumber, "")) {
@@ -91,7 +95,7 @@ public class CalculatorEngine {
                 addPoint("0.");
             } else if (currentNumber.contains(".")) {
                 if (BuildConfig.DEBUG) {
-                    Log.d(TAG, btnID + "pressed but no new point was added");
+                    Log.d(TAG, btnID + " pressed but no new point was added");
                 }
             } else {
                 addPoint(".");
@@ -102,7 +106,7 @@ public class CalculatorEngine {
                 this.inputArray.add(currentNumber);
             currentNumber = "";
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, inputArray.toString() + " -- array and current is :" + currentNumber);
+                Log.d(TAG, inputArray.toString() + " -- array and current is : " + currentNumber);
             }
             calculateResult();
             showingResult = true;
@@ -181,7 +185,6 @@ public class CalculatorEngine {
     }
 
     public void calculateResult() {
-        double result = 0;
         double midResult = 0;
         double x = 0;
         double y = 0;
@@ -207,76 +210,6 @@ public class CalculatorEngine {
             inputArray.add(0, Objects.toString(midResult));
         }
         calcResult = midResult;
-
-/*        double result = 0;
-        double midResult = 0;
-        double x = 0;
-        double y = 0;
-        boolean xHasValue = false;
-        boolean yHasValue = false;
-        boolean midHasValue = false;
-        for (int i = 0; i < this.inputArray.size(); i++) {
-
-            if (i % 2 == 0) {
-
-                if (xHasValue) {
-                    y = Double.parseDouble(inputArray.get(i));
-                    xHasValue = false;
-                    yHasValue = true;
-                } else {
-                    x = Double.parseDouble(inputArray.get(i));
-                    xHasValue = true;
-                }
-                if (midHasValue) {
-                    if (this.inputArray.get(i - 1).equals("-")) {
-                        midResult = midResult - x;
-                    } else if (this.inputArray.get(i - 1).equals("+")) {
-                        midResult = midResult + x;
-                    } else if (this.inputArray.get(i - 1).equals("/")) {
-                        midResult = midResult / x;
-                    } else if (this.inputArray.get(i - 1).equals("*")) {
-                        midResult = midResult * x;
-                    }
-                    result = midResult;
-                }
-            }
-            if (i > 0) {
-                if (this.inputArray.get(i - 1).equals("-") && yHasValue) {
-                    midResult = x - y;
-                    yHasValue = false;
-                    midHasValue = true;
-                } else if (this.inputArray.get(i - 1).equals("+") && yHasValue) {
-                    midResult = x + y;
-                    yHasValue = false;
-                    midHasValue = true;
-                } else if (this.inputArray.get(i - 1).equals("/") && yHasValue) {
-                    midResult = x / y;
-                    yHasValue = false;
-                    midHasValue = true;
-                } else if (this.inputArray.get(i - 1).equals("*") && yHasValue) {
-                    midResult = x * y;
-                    midHasValue = true;
-                    yHasValue = false;
-
-                } else if (i + 1 >= this.inputArray.size()) {
-
-                    if (this.inputArray.get(i).equals("-")) {
-                        result = midResult - Double.parseDouble(inputArray.get(i));
-                    } else if (this.inputArray.get(i).equals("+")) {
-                        result = midResult + Double.parseDouble(inputArray.get(i));
-                    } else if (this.inputArray.get(i).equals("/")) {
-                        result = midResult / Double.parseDouble(inputArray.get(i));
-                    } else if (this.inputArray.get(i).equals("*")) {
-                        result = midResult * Double.parseDouble(inputArray.get(i));
-                    }
-
-                }
-                if (this.inputArray.size() == 3)
-                    result = midResult;
-            }
-
-        }
-        calcResult = result;*/
     }
 
     public void clear() {
@@ -284,5 +217,25 @@ public class CalculatorEngine {
         currentNumber = "";
         calcResult = -1;
         lastInserted = false;
+    }
+    public void setStringToArray(String string){
+        String temp="";
+        for (int i = 0; i < string.length(); i++) {
+            if (string.substring(i, i + 1).matches("[\\d.]+")){
+                temp = temp.concat(string.substring(i,i+1));
+            }
+            if (!string.substring(i, i + 1).matches("[\\d.]+")){
+                inputArray.add(temp);
+                inputArray.add(string.substring(i, i + 1));
+                temp = "";
+            }
+        }
+    }
+    public void arrayToString(ArrayList<String> array){
+        String temp="";
+        for (int i = 0; i < array.size(); i++) {
+            temp = temp.concat(array.get(i));
+        }
+        setStateDisplayTextSave(temp);
     }
 }

@@ -12,9 +12,10 @@
     <string name="nr9">9</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
-    <string name="multiply">x</string>
-    <string name="divide">÷</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
     <string name="ans">=</string>
     <string name="clear">C</string>
-    <string name="point">.</string>
+    <string name="point">•</string>
+
 </resources>
