@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         private CalculatorEngine calc = new CalculatorEngine();
     */
     private static TextView calcText;
+    private static String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
         calcText = (TextView) findViewById(R.id.textViewCalc);
+        calcText.setText(text);
 /*
         if (savedInstanceState != null) {
             if (BuildConfig.DEBUG) {
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             public void onReceive(Context context, Intent intent) {
                 String calcResult = getResultData();
                 calcText.setText(calcResult);
+                text = calcResult;
             }
         }, null, Activity.RESULT_OK, null, null);
     }
