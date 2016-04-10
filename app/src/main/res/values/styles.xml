@@ -15,7 +15,7 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="textview_label" parent="@android:style/Widget.TextView">
-        <item name="android:textSize">85sp</item>
+        <item name="android:textSize">75sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#d1d1d1</item>
         <item name="android:antialias">true</item>
