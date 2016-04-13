@@ -15,11 +15,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="textview_label" parent="@android:style/Widget.TextView">
-        <item name="android:textSize">75sp</item>
+        <item name="android:textSize">70sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#d1d1d1</item>
         <item name="android:antialias">true</item>
-        <item name="android:gravity">top|right</item>
+        <item name="android:gravity">bottom|right</item>
     </style>
 
     <style name="operand_button">
